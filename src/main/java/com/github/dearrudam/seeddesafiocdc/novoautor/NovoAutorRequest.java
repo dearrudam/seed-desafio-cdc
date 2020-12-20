@@ -1,28 +1,37 @@
 package com.github.dearrudam.seeddesafiocdc.novoautor;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import java.time.Instant;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.time.Instant;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.github.dearrudam.seeddesafiocdc.validation.Unique;
 
 public class NovoAutorRequest {
-    @NotNull @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "UTC")
+    @NotNull
+    @JsonFormat( pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "UTC")
     private final Instant instante;
-    @NotEmpty @Email
+    @NotEmpty
+    @Email
+    @Unique(entityClass = AutorEntity.class, fieldName = "email")
     private final String email;
     @NotEmpty
     private final String nome;
-    @NotEmpty @Size(min = 1, max = 400)
+    @NotEmpty
+    @Size(min = 1, max = 400)
     private final String descricao;
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
     public NovoAutorRequest(
-            @NotNull @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "UTC") Instant instante,
-            @Email @NotEmpty String email,
+            @NotNull 
+            @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "UTC") Instant instante,
+            @Email
+            @NotEmpty
+            @Unique(entityClass = AutorEntity.class, fieldName = "email") String email,
             @NotEmpty String nome,
             @NotEmpty @Size(min = 1, max = 400) String descricao
     ) {
