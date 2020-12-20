@@ -3,6 +3,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij+all,eclipse,netbeans,vscode,gradle,maven
 
 ### Eclipse ###
+.classpath
+.project
 .metadata
 bin/
 tmp/
