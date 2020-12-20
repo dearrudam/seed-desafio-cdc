@@ -191,7 +191,7 @@ nbdist/
 ### Gradle ###
 .gradle
 
-# Ignore Gradle GUI config
+# Ignore Gradle GUI config.yml
 gradle-app.setting
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
