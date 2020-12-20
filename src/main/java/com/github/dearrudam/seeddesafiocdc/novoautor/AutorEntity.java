@@ -28,11 +28,11 @@ public class AutorEntity {
     @Lob
     private String descricao;
 
-    @Deprecated
     /**
-     * requerido pelo JPA
+     * DO NOT USE! This constructor is required by JPA 
      */
-    protected AutorEntity() {
+    @Deprecated
+    public AutorEntity() {
     }
 
     public AutorEntity(
