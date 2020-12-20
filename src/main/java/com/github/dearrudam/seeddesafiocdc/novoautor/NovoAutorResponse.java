@@ -4,7 +4,7 @@ public class NovoAutorResponse {
 
     private final Long id;
 
-    public NovoAutorResponse(AutorEntity autor) {
+    public NovoAutorResponse(Autor autor) {
         this.id = autor.getId();
     }
 

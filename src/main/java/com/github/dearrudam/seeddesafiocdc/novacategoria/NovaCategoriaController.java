@@ -31,7 +31,7 @@ public class NovaCategoriaController {
 			@Valid
 			NovaCategoriaRequest request){
 	
-		CategoriaEntity novaCategoria = request.toModel();
+		Categoria novaCategoria = request.toModel();
 		
 		manager.persist(novaCategoria);
 		

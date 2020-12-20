@@ -9,18 +9,18 @@ import com.github.dearrudam.seeddesafiocdc.validation.Unique;
 public class NovaCategoriaRequest {
 
 	@NotEmpty 
-	@Unique(entityClass = CategoriaEntity.class, fieldName = "nome")
+	@Unique(entityClass = Categoria.class, fieldName = "nome")
 	private final String nome;
 
 	@JsonCreator(mode = Mode.PROPERTIES)
 	public NovaCategoriaRequest(
-			@NotEmpty @Unique(entityClass = CategoriaEntity.class, fieldName = "nome") String nome) {
+			@NotEmpty @Unique(entityClass = Categoria.class, fieldName = "nome") String nome) {
 		super();
 		this.nome = nome;
 	}
 
-	public CategoriaEntity toModel() {
-		return new CategoriaEntity(this.nome);
+	public Categoria toModel() {
+		return new Categoria(this.nome);
 	}
 
 }

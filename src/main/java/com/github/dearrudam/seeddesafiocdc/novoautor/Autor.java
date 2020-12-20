@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 import java.time.Instant;
 
 @Entity
-public class AutorEntity {
+public class Autor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,10 +32,10 @@ public class AutorEntity {
      * DO NOT USE! This constructor is required by JPA 
      */
     @Deprecated
-    public AutorEntity() {
+    public Autor() {
     }
 
-    public AutorEntity(
+    public Autor(
             @NotNull @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "UTC") Instant instante,
             @Email @NotEmpty String email,
             @NotEmpty String nome,

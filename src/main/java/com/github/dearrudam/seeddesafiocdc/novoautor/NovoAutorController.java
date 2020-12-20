@@ -24,10 +24,10 @@ public class NovoAutorController {
     @Transactional
     public ResponseEntity<NovoAutorResponse> execute
             (@RequestBody @Valid NovoAutorRequest
-                     input) {
-        AutorEntity autor = input.toModel();
-        manager.persist(autor);
-        return ResponseEntity.status(OK).body(new NovoAutorResponse(autor));
+                     request) {
+        Autor novoAutor = request.toModel();
+        manager.persist(novoAutor);
+        return ResponseEntity.status(OK).body(new NovoAutorResponse(novoAutor));
     }
 
 }

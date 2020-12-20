@@ -4,7 +4,7 @@ public class NovaCategoriaResponse {
 
 	private Long categoriaId;
 
-	public NovaCategoriaResponse(CategoriaEntity novaCategoria) {
+	public NovaCategoriaResponse(Categoria novaCategoria) {
 		this.categoriaId = novaCategoria.getId();
 	}
 

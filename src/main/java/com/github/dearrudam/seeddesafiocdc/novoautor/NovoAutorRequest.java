@@ -17,7 +17,7 @@ public class NovoAutorRequest {
     private final Instant instante;
     @NotEmpty
     @Email
-    @Unique(entityClass = AutorEntity.class, fieldName = "email")
+    @Unique(entityClass = Autor.class, fieldName = "email")
     private final String email;
     @NotEmpty
     private final String nome;
@@ -31,7 +31,7 @@ public class NovoAutorRequest {
             @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "UTC") Instant instante,
             @Email
             @NotEmpty
-            @Unique(entityClass = AutorEntity.class, fieldName = "email") String email,
+            @Unique(entityClass = Autor.class, fieldName = "email") String email,
             @NotEmpty String nome,
             @NotEmpty @Size(min = 1, max = 400) String descricao
     ) {
@@ -42,8 +42,8 @@ public class NovoAutorRequest {
         this.descricao = descricao;
     }
 
-    public AutorEntity toModel() {
-        return new AutorEntity(
+    public Autor toModel() {
+        return new Autor(
                 instante,
                 email,
                 nome,

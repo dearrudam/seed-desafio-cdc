@@ -9,7 +9,7 @@ import javax.validation.constraints.NotEmpty;
 import org.springframework.util.Assert;
 
 @Entity
-public class CategoriaEntity {
+public class Categoria {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +18,7 @@ public class CategoriaEntity {
 	@NotEmpty
 	private String nome;
 
-	public CategoriaEntity(@NotEmpty String nome) {
+	public Categoria(@NotEmpty String nome) {
 		super();
 		this.nome = nome;
 	}
