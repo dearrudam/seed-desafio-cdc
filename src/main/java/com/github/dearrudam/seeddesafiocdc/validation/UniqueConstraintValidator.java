@@ -25,10 +25,17 @@ public class UniqueConstraintValidator implements ConstraintValidator<Unique, Ob
 
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext constraintValidatorContext) {
+        
+        StringBuilder jpql = new StringBuilder("select count(*) from " + entityClass.getName() + " e ");
+        jpql.append("where ");
+        if (value instanceof String) {
+            jpql.append("lower(e." + fieldName + ") = lower(:fieldValue)");
+        }else{
 
+            jpql.append("e." + fieldName + " = :fieldValue");
+        }
         Long count = entityManager
-                .createQuery("select count(*) from " + entityClass.getName() + " e " +
-                        "where e." + fieldName + "= :fieldValue ", Long.class)
+                .createQuery(jpql.toString(), Long.class)
                 .setParameter("fieldValue", value).getSingleResult();
 
         return count == 0l;

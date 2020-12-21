@@ -14,9 +14,17 @@ public class Categoria {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@NotEmpty
 	private String nome;
+
+	/**
+	 * DO NOT USE! It's required by JPA
+	 */
+	@Deprecated
+	public Categoria() {
+		super();
+	}
 
 	public Categoria(@NotEmpty String nome) {
 		super();
@@ -28,7 +36,7 @@ public class Categoria {
 	}
 
 	public Long getId() {
-		Assert.notNull(id,"falha ao retornar o ID de uma categoria não persistida.");
+		Assert.notNull(id, "falha ao retornar o ID de uma categoria não persistida.");
 		return id;
 	}
 
