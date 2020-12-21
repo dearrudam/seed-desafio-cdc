@@ -1,4 +1,4 @@
-package com.github.dearrudam.seeddesafiocdc.novacategoria;
+package com.github.dearrudam.seeddesafiocdc.categoria;
 
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;

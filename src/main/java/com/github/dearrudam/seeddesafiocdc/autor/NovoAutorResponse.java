@@ -1,4 +1,4 @@
-package com.github.dearrudam.seeddesafiocdc.novoautor;
+package com.github.dearrudam.seeddesafiocdc.autor;
 
 public class NovoAutorResponse {
 

@@ -1,4 +1,4 @@
-package com.github.dearrudam.seeddesafiocdc.novoautor;
+package com.github.dearrudam.seeddesafiocdc.autor;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

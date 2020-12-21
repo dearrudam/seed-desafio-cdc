@@ -1,4 +1,4 @@
-package com.github.dearrudam.seeddesafiocdc.novoautor;
+package com.github.dearrudam.seeddesafiocdc.autor;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.util.Assert;

@@ -1,4 +1,4 @@
-package com.github.dearrudam.seeddesafiocdc.novacategoria;
+package com.github.dearrudam.seeddesafiocdc.categoria;
 
 public class NovaCategoriaResponse {
 
