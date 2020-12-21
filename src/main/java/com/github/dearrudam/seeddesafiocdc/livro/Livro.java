@@ -80,4 +80,7 @@ public class Livro {
         return this.id;
     }
 
+    public String getTitulo() {
+        return this.titulo;
+    }
 }
