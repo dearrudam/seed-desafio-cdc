@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2020-12-15T01:06:11.598Z
+__export_date: 2020-12-21T04:42:27.486Z
 __export_source: insomnia.desktop.app:v2020.4.2
 resources:
   - _id: req_db30b6bd04f9408e984ed167485cf8c1
     parentId: fld_a2bf08478f504e77bfb6ba841fc61096
-    modified: 1605912762054
+    modified: 1608436756665
     created: 1604382594819
     url: http://{{ host }}:{{ port }}/api/v1/autores
     name: Adicionar Autor
@@ -15,9 +15,10 @@ resources:
       mimeType: application/json
       text: >-
         {
+        	"instante": "2020-12-15T04:24:07",
         	"nome": "Maximillian",
-        	"email":"dearrudam@gmail.com",
-        	"descricao":"a aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaa"
+        	"email": "dearrudams@mail.com",
+        	"descricao": "a aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaa"
         }
     parameters: []
     headers:
@@ -26,10 +27,10 @@ resources:
         id: pair_5c9a4f983ea2465f817bb7cab73ba464
         disabled: false
       - name: Accept-Language
-        value: pt
+        value: pt-BR
         description: ""
         id: pair_cf07fb2309794967a3a0b921a7f5e646
-        disabled: true
+        disabled: false
     authentication: {}
     metaSortKey: -1604573369441
     isPrivate: false
@@ -65,7 +66,7 @@ resources:
     _type: workspace
   - _id: req_e24bb0e88ecd44a1849822b25d642996
     parentId: fld_a2bf08478f504e77bfb6ba841fc61096
-    modified: 1605912768350
+    modified: 1608516681329
     created: 1604599544929
     url: http://{{ host }}:{{ port }}/api/v1/categorias
     name: Adicionar Categoria
@@ -84,7 +85,7 @@ resources:
         id: pair_5c9a4f983ea2465f817bb7cab73ba464
         disabled: false
       - name: Accept-Language
-        value: pt
+        value: pt-BR
         description: ""
         id: pair_cf07fb2309794967a3a0b921a7f5e646
         disabled: false
@@ -100,7 +101,7 @@ resources:
     _type: request
   - _id: req_12867896a8ef469f895f8a638c06f40f
     parentId: fld_a2bf08478f504e77bfb6ba841fc61096
-    modified: 1607817701675
+    modified: 1608525645132
     created: 1605912745956
     url: http://{{ host }}:{{ port }}/api/v1/livros
     name: Adicionar Livro
@@ -111,13 +112,13 @@ resources:
       text: |-
         {
         	"preco": 20.0,
-        	"isbn": "13334186-2ef8-4e02-b2c0-b29e6108f6d32",
+        	"isbn": "13334186",
         	"numeroDePaginas": 100,
         	"categoriaId": 1,
-        	"sumario": "296e0fd1-3e57-4ac9-b847-9ade96313d05",
-        	"titulo": "7a642d96-04aa-245ac-b27a-9461d29123e7",
-        	"resumo": "775eff0a-158f-4661-992b-bc43e2726a2a",
-        	"dataLancamento": "2020-12-21",
+        	"sumario": "Introdução",
+        	"titulo": "Iniciando com Java",
+        	"resumo": "Vamos iniciar com Java",
+        	"dataLancamento": "2020-12-25",
         	"autorId": 1
         }
     parameters: []
@@ -127,7 +128,7 @@ resources:
         id: pair_5c9a4f983ea2465f817bb7cab73ba464
         disabled: false
       - name: Accept-Language
-        value: pt
+        value: pt-BR
         description: ""
         id: pair_cf07fb2309794967a3a0b921a7f5e646
         disabled: false
@@ -143,7 +144,7 @@ resources:
     _type: request
   - _id: req_5a98b09557d54d0c8c80b77006fd1a27
     parentId: fld_a2bf08478f504e77bfb6ba841fc61096
-    modified: 1607817803176
+    modified: 1608523528800
     created: 1607817799058
     url: http://{{ host }}:{{ port }}/api/v1/livros
     name: Listar Livros
@@ -163,7 +164,16 @@ resources:
         	"dataLancamento": "2020-12-21",
         	"autorId": 1
         }
-    parameters: []
+    parameters:
+      - name: pageNumber
+        value: "0"
+        description: ""
+        id: pair_51f2c8d01a564202a1771381be7e511e
+        disabled: false
+      - name: pageSize
+        value: "500"
+        description: ""
+        id: pair_c4a243408f1940bea72c99f6ce503137
     headers:
       - name: Content-Type
         value: application/json
