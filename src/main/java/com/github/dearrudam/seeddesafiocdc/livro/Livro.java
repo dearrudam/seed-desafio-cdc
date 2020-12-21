@@ -3,6 +3,7 @@ package com.github.dearrudam.seeddesafiocdc.livro;
 import com.github.dearrudam.seeddesafiocdc.categoria.Categoria;
 import com.github.dearrudam.seeddesafiocdc.autor.Autor;
 import lombok.Builder;
+import lombok.Getter;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;
@@ -18,15 +19,19 @@ public class Livro {
     private Long id;
 
     @NotEmpty
+    @Getter
     private String titulo;
 
     @NotEmpty
+    @Getter
     private String sumario;
 
     @Size(min = 1, max = 500)
+    @Getter
     private String resumo;
 
     @NotEmpty
+    @Getter
     private String isbn;
 
     @NotNull
@@ -35,18 +40,22 @@ public class Livro {
 
     @NotNull
     @Min(100)
+    @Getter
     private Integer numeroDePaginas;
 
     @NotNull
     @Min(20)
+    @Getter
     private BigDecimal preco;
 
     @ManyToOne
     @NotNull
+    @Getter
     private Categoria categoria;
 
     @ManyToOne
     @NotNull
+    @Getter
     private Autor autor;
 
     /**
@@ -80,7 +89,4 @@ public class Livro {
         return this.id;
     }
 
-    public String getTitulo() {
-        return this.titulo;
-    }
 }

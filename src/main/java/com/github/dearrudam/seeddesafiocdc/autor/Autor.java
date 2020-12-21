@@ -1,6 +1,7 @@
 package com.github.dearrudam.seeddesafiocdc.autor;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Getter;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;
@@ -20,12 +21,15 @@ public class Autor {
     private Instant instante;
     @Email
     @NotEmpty
+    @Getter
     private String email;
     @NotEmpty
+    @Getter
     private String nome;
     @NotEmpty
     @Size(min = 1, max = 400)
     @Lob
+    @Getter
     private String descricao;
 
     /**

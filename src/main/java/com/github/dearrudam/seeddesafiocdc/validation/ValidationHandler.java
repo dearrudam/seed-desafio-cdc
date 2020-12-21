@@ -11,6 +11,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import javax.validation.ConstraintViolationException;
 import java.util.List;
@@ -25,6 +26,25 @@ public class ValidationHandler {
     @Autowired
     public ValidationHandler(MessageSource messageSource) {
         this.messageSource = messageSource;
+    }
+
+    @ExceptionHandler({MethodArgumentTypeMismatchException.class})
+    public ResponseEntity<ValidationErrors> handler(MethodArgumentTypeMismatchException exception, Locale locale) {
+        ValidationErrors errors = new ValidationErrors(
+                List.of(),
+                List.of(
+                        new com.github.dearrudam.seeddesafiocdc.validation.FieldError(
+                                exception.getName(),
+                                this.messageSource.getMessage(
+                                        exception.getErrorCode(),
+                                        new Object[0],
+                                        exception.getMostSpecificCause().getLocalizedMessage(),
+                                        locale)
+                        )
+                )
+
+        );
+        return ResponseEntity.badRequest().body(errors);
     }
 
     @ExceptionHandler({ConstraintViolationException.class})
