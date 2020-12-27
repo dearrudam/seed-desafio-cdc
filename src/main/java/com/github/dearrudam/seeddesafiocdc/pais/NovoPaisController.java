@@ -1,4 +1,4 @@
-package com.github.dearrudam.seeddesafiocdc.paises;
+package com.github.dearrudam.seeddesafiocdc.pais;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

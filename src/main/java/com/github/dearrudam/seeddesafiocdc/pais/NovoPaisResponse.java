@@ -1,4 +1,4 @@
-package com.github.dearrudam.seeddesafiocdc.paises;
+package com.github.dearrudam.seeddesafiocdc.pais;
 
 import lombok.Getter;
 

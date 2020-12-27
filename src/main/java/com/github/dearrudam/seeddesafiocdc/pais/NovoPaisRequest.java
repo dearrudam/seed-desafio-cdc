@@ -1,4 +1,4 @@
-package com.github.dearrudam.seeddesafiocdc.paises;
+package com.github.dearrudam.seeddesafiocdc.pais;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.github.dearrudam.seeddesafiocdc.validation.Unique;
