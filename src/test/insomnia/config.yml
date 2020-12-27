@@ -1,7 +1,7 @@
 _type: export
 __export_format: 4
-__export_date: 2020-12-21T04:42:27.486Z
-__export_source: insomnia.desktop.app:v2020.4.2
+__export_date: 2020-12-27T22:57:53.903Z
+__export_source: insomnia.desktop.app:v2020.5.2
 resources:
   - _id: req_db30b6bd04f9408e984ed167485cf8c1
     parentId: fld_a2bf08478f504e77bfb6ba841fc61096
@@ -101,7 +101,7 @@ resources:
     _type: request
   - _id: req_12867896a8ef469f895f8a638c06f40f
     parentId: fld_a2bf08478f504e77bfb6ba841fc61096
-    modified: 1608525645132
+    modified: 1609106534597
     created: 1605912745956
     url: http://{{ host }}:{{ port }}/api/v1/livros
     name: Adicionar Livro
@@ -118,7 +118,7 @@ resources:
         	"sumario": "Introdução",
         	"titulo": "Iniciando com Java",
         	"resumo": "Vamos iniciar com Java",
-        	"dataLancamento": "2020-12-25",
+        	"dataLancamento": "2021-12-25",
         	"autorId": 1
         }
     parameters: []
@@ -196,9 +196,9 @@ resources:
     _type: request
   - _id: req_fd7753606f0f4fd088695c2cd05f6dd0
     parentId: fld_a2bf08478f504e77bfb6ba841fc61096
-    modified: 1607822116918
+    modified: 1608530181642
     created: 1607821342666
-    url: http://{{ host }}:{{ port }}/api/v1/livros/-1
+    url: http://{{ host }}:{{ port }}/api/v1/livros/1
     name: Exibir Livro
     description: ""
     method: GET
@@ -229,6 +229,77 @@ resources:
         disabled: false
     authentication: {}
     metaSortKey: -1604573369241
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_50421678aac84dcdb8b2e2170cf5402a
+    parentId: fld_a2bf08478f504e77bfb6ba841fc61096
+    modified: 1609108055061
+    created: 1609106644681
+    url: http://{{ host }}:{{ port }}/api/v1/paises
+    name: Adicionar País
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome": "Brasil"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_5c9a4f983ea2465f817bb7cab73ba464
+        disabled: false
+      - name: Accept-Language
+        value: pt-BR
+        description: ""
+        id: pair_cf07fb2309794967a3a0b921a7f5e646
+        disabled: false
+    authentication: {}
+    metaSortKey: -1604573369191
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b4590a8c47c248d48f7373582dae19ae
+    parentId: fld_a2bf08478f504e77bfb6ba841fc61096
+    modified: 1609108082489
+    created: 1609108049706
+    url: http://{{ host }}:{{ port }}/api/v1/estados
+    name: Adicionar Estado
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"paisId": 1,
+        	"nome": "São Paulo"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_5c9a4f983ea2465f817bb7cab73ba464
+        disabled: false
+      - name: Accept-Language
+        value: pt-BR
+        description: ""
+        id: pair_cf07fb2309794967a3a0b921a7f5e646
+        disabled: false
+    authentication: {}
+    metaSortKey: -1604573369141
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
