@@ -1,7 +1,4 @@
 # Read Me First
-The following was discovered as part of building this project:
-
-* The original package name 'com.github.dearrudam.seed-desafio-cdc' is invalid and this project uses 'com.github.dearrudam.seeddesafiocdc' instead.
 
 # Getting Started
 
