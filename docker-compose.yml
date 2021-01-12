@@ -1,0 +1,50 @@
+version: "3.1"
+services:
+  api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: on-failure
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/cdc?autoReconnect=true&useSSL=false
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_JPA_GENERATE_DDL: 'true'
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQL8Dialect
+      SPRING_JPA_SHOW_SQL: 'true'
+    ports:
+      - "8888:8080"
+    links:
+      - database
+    depends_on:
+      - database
+
+  database:
+    image: mysql:8.0.2
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cdc
+    ports:
+      - '3306:3306'
+    volumes:
+      - type: volume
+        source: mysql-volume
+        target: /var/lib/mysql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+    links:
+      - database
+    depends_on:
+      - database
+
+
+volumes:
+
+  mysql-volume:
+    name: mysql-volume
